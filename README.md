@@ -1,2 +1,1 @@
-# mall
-电商项目
+mmall_learning
