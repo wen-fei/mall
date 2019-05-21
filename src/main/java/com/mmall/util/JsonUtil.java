@@ -124,32 +124,35 @@ public class JsonUtil {
         u1.setId(1);
         u1.setEmail("tengyun.cs@gmail.com");
 
-        User u2 = new User();
-        u2.setId(2);
-        u2.setEmail("tengyun.cs@gmail.com");
-
-        String user1Json = JsonUtil.obj2String(u1);
-
         String user1JsonPretty = JsonUtil.obj2StringPretty(u1);
-
-        log.info("user1Json: {} ", user1Json);
-
         log.info("user1JsonPretty: {}", user1JsonPretty);
 
-        User user = JsonUtil.string2Obj(user1Json, User.class);
-
-        List<User> userList = Lists.newArrayList();
-        userList.add(u1);
-        userList.add(u2);
-        String userListStr = JsonUtil.obj2StringPretty(userList);
-        log.info("======================");
-        log.info(userListStr);
-
-
-        // 直接这样写是错误的，传入List.class,内部会实例化为LinkedHashMap，反序列化失败
-        List<User> userListObj1 = JsonUtil.string2Obj(userListStr, new TypeReference<List<User>>() {});
-
-        System.out.println("end");
+//        User u2 = new User();
+//        u2.setId(2);
+//        u2.setEmail("tengyun.cs@gmail.com");
+//
+//        String user1Json = JsonUtil.obj2String(u1);
+//
+//        String user1JsonPretty = JsonUtil.obj2StringPretty(u1);
+//
+//        log.info("user1Json: {} ", user1Json);
+//
+//        log.info("user1JsonPretty: {}", user1JsonPretty);
+//
+//        User user = JsonUtil.string2Obj(user1Json, User.class);
+//
+//        List<User> userList = Lists.newArrayList();
+//        userList.add(u1);
+//        userList.add(u2);
+//        String userListStr = JsonUtil.obj2StringPretty(userList);
+//        log.info("======================");
+//        log.info(userListStr);
+//
+//
+//        // 直接这样写是错误的，传入List.class,内部会实例化为LinkedHashMap，反序列化失败
+//        List<User> userListObj1 = JsonUtil.string2Obj(userListStr, new TypeReference<List<User>>() {});
+//
+//        System.out.println("end");
     }
 
 
