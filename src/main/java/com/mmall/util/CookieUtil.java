@@ -44,6 +44,8 @@ public class CookieUtil {
         ck.setDomain(COOKIE_DOMAIN);
         // 代表设置在根目录
         ck.setPath("/");
+        // 防止脚本攻击带来的信息泄露风险
+        ck.setHttpOnly(true);
         // 单位是秒，如果这个maxage不设置的话，cookie就不会写入硬盘，而是写在内存，只在当前页面有效，不会持久化
         // 如果是-1，代表永久
         ck.setMaxAge(60 * 60 * 24 * 365);
