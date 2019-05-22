@@ -237,9 +237,9 @@
   </select>
 
 
-  <select id="selectOrderStatusByCreateTime" resultMap="BaseResultMap" parameterMap="Map">
+  <select id="selectOrderStatusByCreateTime" resultMap="BaseResultMap" parameterType="map">
       select
-      <include refid="Base_Column_list" />
+      <include refid="Base_Column_List" />
       from mmall_order
       where statue = #{status}
       <![CDATA[
