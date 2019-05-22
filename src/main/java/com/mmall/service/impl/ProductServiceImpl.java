@@ -40,6 +40,7 @@ public class ProductServiceImpl implements IProductService {
     @Autowired
     private ICategoryService iCategoryService;
 
+    @Override
     public ServerResponse saveOrUpdateProduct(Product product){
         if(product != null)
         {
@@ -68,7 +69,8 @@ public class ProductServiceImpl implements IProductService {
     }
 
 
-    public ServerResponse<String> setSaleStatus(Integer productId,Integer status){
+    @Override
+    public ServerResponse<String> setSaleStatus(Integer productId, Integer status){
         if(productId == null || status == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(),ResponseCode.ILLEGAL_ARGUMENT.getDesc());
         }
@@ -83,6 +85,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
 
+    @Override
     public ServerResponse<ProductDetailVo> manageProductDetail(Integer productId){
         if(productId == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(),ResponseCode.ILLEGAL_ARGUMENT.getDesc());
